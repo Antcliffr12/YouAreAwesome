@@ -10,10 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var message = ""
     @State private var imageName = ""
-    @State private var imageNumber = 0
-    @State private var messageNumber = 0
     @State private var messages:[String] = []
+    @State private var lastMessageNumber = -1
+    @State private var lastImageNumber = -1
     
+   
     
     
     var body: some View {
@@ -43,21 +44,33 @@ struct ContentView: View {
             
             Button("Show Me") {
                 messages = ["Great", "Amazing", "Good Job!", "You're the best!", "Be Better", "When the Genius Bar needs help"]
+               
+                //generate random number to use as index
+                // if messagenumber == lastNumber
+                //keep going until a message number != lastMessageNumber
+                //set messageString to messages[messageNumber]
+                //update the lastMessageNumber
                 
-                imageName  = "image\(Int.random(in: 0...9))"
-                                
-                message = messages[Int.random(in: 0...messages.count-1)]
+                var messageNumber = Int.random(in: 0...messages.count-1)
+               
+                while messageNumber == lastMessageNumber {
+                    messageNumber = Int.random(in: 0...messages.count-1)
+                }
+            
+                message = messages[messageNumber]
+                lastMessageNumber = messageNumber
                 
+                var imageNumber = Int.random(in: 0...9)
                 
+                imageName  = "image\(imageNumber)"
                 
-                if messageNumber == messages.count {
-                    messageNumber = 0
+                while imageNumber == lastImageNumber {
+                    imageNumber = Int.random(in: 0...9)
                 }
                 
-                if imageNumber > 9 {
-                    imageNumber = 0
-                }
-                
+                imageName = "image\(imageNumber)"
+                lastImageNumber = imageNumber
+                 
             }
             
             
