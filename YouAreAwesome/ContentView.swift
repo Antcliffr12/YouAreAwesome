@@ -8,37 +8,62 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var message = "I am an app devloper"
+    @State private var message = ""
+    @State private var imageName = ""
+    @State private var imageNumber = 0
+    @State private var messageNumber = 0
+    @State private var messages:[String] = []
+    
     
     
     var body: some View {
         VStack {
-            Spacer()
-            
-            Image(systemName: "swift")
-                .resizable()
-                .scaledToFit()
-                .foregroundStyle(.red)
-                .frame(width: 200, height: 200)
             
             Text(message)
                 .font(.largeTitle)
-                .fontWeight(.ultraLight)
+                .fontWeight(.heavy)
+                .foregroundStyle(.red)
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.5)
+                .frame(height: 100)
+                .animation(.easeOut(duration: 0.15), value: message)
+        
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .clipShape(RoundedRectangle(cornerRadius: 30))
+                .shadow(radius: 30)
+                .animation(.default, value: imageName)
+            
+            
+       
             
             Spacer()
             
-            HStack{
-                Button("Awesome") {
-                    message = "Awesome!"
+            
+            Button("Show Me") {
+                messages = ["Great", "Amazing", "Good Job!", "You're the best!", "Be Better", "When the Genius Bar needs help"]
+                
+                imageName  = "image\(Int.random(in: 0...9))"
+                                
+                message = messages[Int.random(in: 0...messages.count-1)]
+                
+                
+                
+                if messageNumber == messages.count {
+                    messageNumber = 0
                 }
-               
-                Button("Great") {
-                    message = "Great"
+                
+                if imageNumber > 9 {
+                    imageNumber = 0
                 }
+                
             }
+            
+            
             .buttonStyle(.borderedProminent)
             .font(.title2)
-            .tint(.orange)
+            
             
             
             
@@ -52,4 +77,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
- 
+
