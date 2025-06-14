@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942B18D42DFCF0BC00327901 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB6E282DE51AB100F85604 /* ContentView.swift */; };
 		94DB6E272DE51AB100F85604 /* YouAreAwesomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB6E262DE51AB100F85604 /* YouAreAwesomeApp.swift */; };
-		94DB6E292DE51AB100F85604 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB6E282DE51AB100F85604 /* ContentView.swift */; };
 		94DB6E2B2DE51AB300F85604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94DB6E2A2DE51AB300F85604 /* Assets.xcassets */; };
 		94DB6E2F2DE51AB300F85604 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94DB6E2E2DE51AB300F85604 /* Preview Assets.xcassets */; };
 		94DB6E392DE51AB400F85604 /* YouAreAwesomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB6E382DE51AB400F85604 /* YouAreAwesomeTests.swift */; };
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94DB6E292DE51AB100F85604 /* ContentView.swift in Sources */,
+				942B18D42DFCF0BC00327901 /* ContentView.swift in Sources */,
 				94DB6E272DE51AB100F85604 /* YouAreAwesomeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
